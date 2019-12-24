@@ -106,7 +106,7 @@ namespace TuPack
 
             instructions.Insert(++indexOf, Instruction.Create(OpCodes.Ldc_I4, asyncIndex));
             instructions.Insert(++indexOf, Instruction.Create(OpCodes.Ldstr, name));
-            instructions.Insert(++indexOf, Instruction.Create(OpCodes.Call, tracerFunctions.End));
+            instructions.Insert(++indexOf, Instruction.Create(OpCodes.Call, tracerFunctions.EndAsync));
 
             indexOf++;
 
@@ -126,7 +126,7 @@ namespace TuPack
             {
                 Instruction.Create(OpCodes.Ldc_I4, asyncIndex),
                 Instruction.Create(OpCodes.Ldstr, name),
-                Instruction.Create(OpCodes.Call, tracerFunctions.Begin)
+                Instruction.Create(OpCodes.Call, tracerFunctions.BeginAsync)
             });
         }
 
